@@ -2,11 +2,11 @@
 KDIR ?= /lib/modules/$(shell uname -r)/build
 CHECKPATCH ?= $(KDIR)/scripts/checkpatch.pl
 
-include $(KDIR)/.config
+M_SRC = nrc
+
+# include $(KDIR)/.config
 
 NRC_VERSION ?= "v1.5.1-g$(shell git rev-parse --verify HEAD 2>/dev/null | cut -c1-12)"
-
-M_SRC = nrc
 
 obj-m += $(M_SRC).o
 $(M_SRC)-objs = \
