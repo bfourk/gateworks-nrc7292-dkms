@@ -1,10 +1,8 @@
 # SPDX-License-Identifier: GPL-2.0
-KDIR ?= /lib/modules/$(shell uname -r)/build
+KDIR ?= /lib/modules/$(KERNELRELEASE)/build
 CHECKPATCH ?= $(KDIR)/scripts/checkpatch.pl
 
 M_SRC = nrc
-
-# include $(KDIR)/.config
 
 NRC_VERSION ?= "v1.5.1-g$(shell git rev-parse --verify HEAD 2>/dev/null | cut -c1-12)"
 
